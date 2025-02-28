@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block header %}
+        <li><a class="nav-link" href="{{ url_for('signup') }}">Sign Up</a></li>
+        <li><a class="nav-link" href="{{ url_for('signin') }}">Sign In</a></li> 
+{% endblock %}
+
+{% block content %}
+<img src="{{ url_for('static', filename='home_1.jpg') }}" alt="" />
+<br><br>
+<p class="hheader">Identify and stop the attacks</p>
+<br><br>
+<img src="{{ url_for('static', filename='home_2.jpg') }}" alt="" />
+<br><br>
+
+<div class="content">
+        <p class="heading"><strong>Normal</strong></p>
+        <p class="description">The term <strong>Normal</strong> refers to standard network activities and behaviors that do not involve any unusual or malicious actions. This is the baseline against which anomalies and attacks are measured.</p>
+        
+        <p class="heading"><strong>DoS/DDoS</strong></p>
+        <p class="description">A <strong>Denial of Service (DoS)</strong> or <strong>Distributed Denial of Service (DDoS)</strong> attack aims to disrupt the normal functioning of a network or service by overwhelming it with excessive traffic. This prevents legitimate users from accessing the targeted resource.</p>
+        
+        <p class="heading"><strong>Port Scan</strong></p>
+        <p class="description">A <strong>Port Scan</strong> is a method used by attackers to discover open ports and services on a networked device. By scanning different ports, an attacker can identify potential vulnerabilities to exploit.</p>
+        
+        <p class="heading"><strong>Botnet</strong></p>
+        <p class="description">A <strong>Botnet</strong> is a network of compromised computers controlled by an attacker. These bots can be used to perform coordinated attacks, send spam, or steal data without the knowledge of the device owners.</p>
+        
+        <p class="heading"><strong>Infiltration</strong></p>
+        <p class="description"><strong>Infiltration</strong> involves gaining unauthorized access to a network or system. This can be achieved through various means, including exploiting vulnerabilities, social engineering, or insider threats.</p>
+        
+        <p class="heading"><strong>Web Attack</strong></p>
+        <p class="description">A <strong>Web Attack</strong> targets websites and web applications with the aim of exploiting vulnerabilities to gain unauthorized access, steal data, or disrupt services. Common types include SQL injection, cross-site scripting (XSS), and cross-site request forgery (CSRF).</p>
+        
+        <p class="heading"><strong>Brute Force</strong></p>
+        <p class="description"><strong>Brute Force</strong> attacks involve systematically trying all possible combinations of passwords or encryption keys until the correct one is found. This method relies on computational power and can be time-consuming but effective against weak passwords.</p>
+</div>
+<br><br>
+<img src="{{ url_for('static', filename='home_3.jpg') }}" alt="" />
+<br><br>
+{% endblock %}

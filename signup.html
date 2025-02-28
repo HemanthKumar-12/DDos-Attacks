@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block header %}
+<li><a class="nav-link" href="{{ url_for('signin') }}">Sign In</a></li>
+{% endblock %}
+
+{% block content %}
+<div class="form-container signup-container">
+    <h2>Sign Up</h2>
+    {% with messages = get_flashed_messages(with_categories=True) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="flash {{ category }}">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    <form method="post">
+        {{ form.hidden_tag() }}
+        <div class="form-group">
+            {{ form.name.label }}
+            {{ form.name() }}
+            {% for error in form.name.errors %}
+                <div class="error">{{ error }}</div>
+            {% endfor %}
+        </div>
+        <div class="form-group">
+            {{ form.email.label }}
+            {{ form.email() }}
+            {% for error in form.email.errors %}
+                <div class="error">{{ error }}</div>
+            {% endfor %}
+        </div>
+        <div class="form-group">
+            {{ form.password.label }}
+            {{ form.password() }}
+            {% for error in form.password.errors %}
+                <div class="error">{{ error }}</div>
+            {% endfor %}
+        </div>
+        <br>
+        {{ form.submit(class="btn btn-primary") }}
+    </form>
+
+
+</div>
+{% endblock %}

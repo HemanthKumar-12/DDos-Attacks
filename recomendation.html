@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block header %}
+<li><a class="nav-link" href="{{ url_for('signout') }}">Sign Out</a></li>
+{% endblock %}
+
+{% block content %}
+<h2>Upload Excel File for Attack Prediction</h2>
+<form method="post" enctype="multipart/form-data">
+    <input type="file" name="file" accept=".xlsx,.xls">
+    <input type="submit" value="Upload and Predict">
+</form>
+
+{% if predictions %}
+    <h3>Predictions:</h3>
+    <ul>
+    {% for prediction in predictions %}
+        <li>{{ prediction }}</li>
+    {% endfor %}
+    </ul>
+{% endif %}
+{% endblock %}
